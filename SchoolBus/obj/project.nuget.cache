@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "RPTTkjbtB9SMLjJbsjzNJyEL5fJLat+uPnBizZOVkt49iXRJxgHO/uB0o6LxDfQDyk6TFWoyyqppumb4gFY1ew==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Aliy_ql08\\Desktop\\New folder\\SchoolBus\\SchoolBus.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Aliy_ql08\\.nuget\\packages\\materialdesigncolors\\2.0.6\\materialdesigncolors.2.0.6.nupkg.sha512",
+    "C:\\Users\\Aliy_ql08\\.nuget\\packages\\materialdesignthemes\\4.5.0\\materialdesignthemes.4.5.0.nupkg.sha512"
+  ],
+  "logs": []
+}

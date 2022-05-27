@@ -1,0 +1,8 @@
+﻿<Page x:Class="SchoolBus.Views.HolidaysView"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
+
+    <Calendar materialDesign:CalendarAssist.HeaderBackground="{StaticResource BusinessColor}" materialDesign:CalendarAssist.SelectionColor="{StaticResource BusinessColor}" Margin="150, 100"/>
+
+</Page>
