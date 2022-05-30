@@ -6,6 +6,6 @@ public partial class CarView : Page
     {
         InitializeComponent();
 
-        DataContext = this;
+        DataContext = new CarViewModel();
     }
 }

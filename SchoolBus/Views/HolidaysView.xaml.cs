@@ -6,6 +6,6 @@ public partial class HolidaysView : Page
     {
         InitializeComponent();
 
-        DataContext = this;
+        DataContext = new HolidaysViewModel();
     }
 }

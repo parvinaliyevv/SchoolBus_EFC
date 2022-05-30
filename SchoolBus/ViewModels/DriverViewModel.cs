@@ -1,16 +1,16 @@
 ﻿namespace SchoolBus.ViewModels;
 
-public class CarViewModel
+public class DriverViewModel
 {
     private readonly SchoolBusDbContext _dbContext;
 
-    public ObservableCollection<Car> Cars { get; set; }
+    public ObservableCollection<Driver> Drivers { get; set; }
 
 
-    public CarViewModel()
+    public DriverViewModel()
     {
         _dbContext = DI_Container.Container.Resolve<SchoolBusDbContext>();
 
-        Cars = new(_dbContext.Cars.Include("Driver"));
+        Drivers = new(_dbContext.Drivers.Include("Cars"));
     }
 }

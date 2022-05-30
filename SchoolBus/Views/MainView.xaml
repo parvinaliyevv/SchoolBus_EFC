@@ -43,11 +43,11 @@
                 <Button Style="{StaticResource MenuButton}" Content="Create Ride"/>
                 <Button Style="{StaticResource MenuButton}" Content="Rides"/>
                 <Button Style="{StaticResource MenuButton}" Content="Class"/>
-                <Button Style="{StaticResource MenuButton}" Content="Student"/>
-                <Button Style="{StaticResource MenuButton}" Content="Parent"/>
-                <Button Style="{StaticResource MenuButton}" Content="Driver"/>
-                <Button Style="{StaticResource MenuButton}" Command="{Binding OpenCarPageCommand}" Content="Car"/>
-                <Button Style="{StaticResource MenuButton}" Command="{Binding OpenHolidaysPageCommand}" Content="Holidays"/>
+                <Button Style="{StaticResource MenuButton}" Command="{Binding DisplayStudentViewCommand}" Content="Student"/>
+                <Button Style="{StaticResource MenuButton}" Command="{Binding DisplayParentViewCommand}" Content="Parent"/>
+                <Button Style="{StaticResource MenuButton}" Command="{Binding DisplayDriverViewCommand}" Content="Driver"/>
+                <Button Style="{StaticResource MenuButton}" Command="{Binding DisplayCarViewCommand}" Content="Car"/>
+                <Button Style="{StaticResource MenuButton}" Command="{Binding DisplayHolidaysViewCommand}" Content="Holidays"/>
 
             </StackPanel>
             

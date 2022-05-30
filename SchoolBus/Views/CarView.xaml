@@ -7,8 +7,6 @@
 
         <Grid.RowDefinitions>
             <RowDefinition MaxHeight="60"/>
-            <RowDefinition MaxHeight="30"/>
-            <RowDefinition MaxHeight="2"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
 
@@ -28,41 +26,40 @@
 
         </DockPanel>
 
-        <Grid Grid.Row="1">
+        <ListView ItemsSource="{Binding Cars}" Grid.Row="1">
+
+            <ListView.View>
+                <GridView>
+
+                    <GridViewColumn Width="150" DisplayMemberBinding="{Binding Driver.FirstName}" Header="Driver Fullname"/>
+                    <GridViewColumn Width="100" DisplayMemberBinding="{Binding Title}" Header="Name"/>
+                    <GridViewColumn Width="50" DisplayMemberBinding="{Binding Number}" Header="Number"/>
+                    <GridViewColumn Width="10" DisplayMemberBinding="{Binding SeatCount}" Header="Seat Count"/>
+
+                    <GridViewColumn Width="100" Header="Actions">
+                        <GridViewColumn.CellTemplate>
+                            <DataTemplate>
+
+                                <StackPanel Orientation="Horizontal">
+
+                                    <Button>
+                                        <materialDesign:PackIcon Kind="Plus"/>
+                                    </Button>
+
+                                    <Button>
+                                        <materialDesign:PackIcon Kind="Minus"/>
+                                    </Button>
+
+                                </StackPanel>
+                                
+                            </DataTemplate>
+                        </GridViewColumn.CellTemplate>
+                    </GridViewColumn>
+
+                </GridView>
+            </ListView.View>
             
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
-
-            <TextBlock HorizontalAlignment="Center" Text="Driver Fullname" Grid.Column="0"/>
-            <TextBlock HorizontalAlignment="Center" Text="Name" Grid.Column="1"/>
-            <TextBlock HorizontalAlignment="Center" Text="Number" Grid.Column="2"/>
-            <TextBlock HorizontalAlignment="Center" Text="Seat Count" Grid.Column="3"/>
-            <TextBlock HorizontalAlignment="Center" Text="Actions" Grid.Column="4"/>
-
-        </Grid>
-
-        <Border CornerRadius="5" Background="DarkGray" Opacity="0.30" Grid.Row="2"/>
-
-        <ItemsControl Grid.Row="3">
-
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <UniformGrid Columns="5"/>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
-                    
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
-            
-        </ItemsControl>
+        </ListView>
 
     </Grid>
     

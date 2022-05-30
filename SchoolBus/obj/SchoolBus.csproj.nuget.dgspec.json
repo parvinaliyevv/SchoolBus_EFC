@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Aliy_ql08\\Desktop\\New folder\\SchoolBus\\SchoolBus.csproj": {}
+    "C:\\Users\\HP\\Desktop\\SchoolBus-WPF\\SchoolBus\\SchoolBus.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Aliy_ql08\\Desktop\\New folder\\SchoolBus\\SchoolBus.csproj": {
+    "C:\\Users\\HP\\Desktop\\SchoolBus-WPF\\SchoolBus\\SchoolBus.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Aliy_ql08\\Desktop\\New folder\\SchoolBus\\SchoolBus.csproj",
+        "projectUniqueName": "C:\\Users\\HP\\Desktop\\SchoolBus-WPF\\SchoolBus\\SchoolBus.csproj",
         "projectName": "SchoolBus",
-        "projectPath": "C:\\Users\\Aliy_ql08\\Desktop\\New folder\\SchoolBus\\SchoolBus.csproj",
-        "packagesPath": "C:\\Users\\Aliy_ql08\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Aliy_ql08\\Desktop\\New folder\\SchoolBus\\obj\\",
+        "projectPath": "C:\\Users\\HP\\Desktop\\SchoolBus-WPF\\SchoolBus\\SchoolBus.csproj",
+        "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\HP\\Desktop\\SchoolBus-WPF\\SchoolBus\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\Aliy_ql08\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -44,9 +40,27 @@
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
           "dependencies": {
+            "Autofac": {
+              "target": "Package",
+              "version": "[6.4.0, )"
+            },
             "MaterialDesignThemes": {
               "target": "Package",
               "version": "[4.5.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[6.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[6.0.5, )"
             }
           },
           "imports": [
@@ -67,7 +81,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
         }
       }
     }
