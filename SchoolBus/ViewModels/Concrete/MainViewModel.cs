@@ -1,6 +1,6 @@
-﻿namespace SchoolBus.ViewModels;
+﻿namespace SchoolBus.ViewModels.Concrete;
 
-public class MainViewModel: DependencyObject
+public class MainViewModel : DependencyObject
 {
     public Page SelectedPage
     {
@@ -11,6 +11,7 @@ public class MainViewModel: DependencyObject
         DependencyProperty.Register("SelectedPage", typeof(Page), typeof(MainViewModel));
 
 
+    public RelayCommand DisplayGroupViewCommand { get; set; }
     public RelayCommand DisplayStudentViewCommand { get; set; }
     public RelayCommand DisplayParentViewCommand { get; set; }
     public RelayCommand DisplayDriverViewCommand { get; set; }
@@ -22,6 +23,7 @@ public class MainViewModel: DependencyObject
     {
         SelectedPage = new StudentView();
 
+        DisplayGroupViewCommand = new RelayCommand(sender => SelectedPage = new GroupView());
         DisplayStudentViewCommand = new RelayCommand(sender => SelectedPage = new StudentView());
         DisplayParentViewCommand = new RelayCommand(sender => SelectedPage = new ParentView());
         DisplayDriverViewCommand = new RelayCommand(sender => SelectedPage = new DriverView());

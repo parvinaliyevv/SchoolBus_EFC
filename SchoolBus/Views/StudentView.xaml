@@ -14,21 +14,13 @@
 
         <DockPanel LastChildFill="False" Grid.Row="0">
 
-            <Button Background="{StaticResource BusinessColor}" BorderBrush="{StaticResource BusinessColor}">
+            <Button Style="{StaticResource BusinessButton}" Content="{materialDesign:PackIcon Kind=Plus}"/>
 
-                <materialDesign:PackIcon Kind="Plus"/>
-
-            </Button>
-
-            <TextBox materialDesign:TextFieldAssist.UnderlineBrush="{StaticResource BusinessColor}" Margin="10" Width="300" VerticalAlignment="Center">
-
-                <materialDesign:HintAssist.Hint>Search</materialDesign:HintAssist.Hint>
-
-            </TextBox>
+            <TextBox Style="{StaticResource BusinessSearchBox}" Width="300" Margin="10" VerticalAlignment="Center"/>
 
         </DockPanel>
 
-        <Grid Grid.Row="1">
+        <Grid Margin="10, 0, 27, 0" Grid.Row="1">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
@@ -38,31 +30,58 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock HorizontalAlignment="Center" Text="Firstname" Grid.Column="0"/>
-            <TextBlock HorizontalAlignment="Center" Text="Lastname" Grid.Column="1"/>
-            <TextBlock HorizontalAlignment="Center" Text="Parent" Grid.Column="2"/>
-            <TextBlock HorizontalAlignment="Center" Text="Class" Grid.Column="3"/>
-            <TextBlock HorizontalAlignment="Center" Text="Actions" Grid.Column="4"/>
+            <TextBlock Style="{StaticResource CustomHeaderTextBlock}" Text="Firstname" Grid.Column="0"/>
+            <TextBlock Style="{StaticResource CustomHeaderTextBlock}" Text="Lastname" Grid.Column="1"/>
+            <TextBlock Style="{StaticResource CustomHeaderTextBlock}" Text="Parent" Grid.Column="2"/>
+            <TextBlock Style="{StaticResource CustomHeaderTextBlock}" Text="Class" Grid.Column="3"/>
+            <TextBlock Style="{StaticResource CustomHeaderTextBlock}" Text="Actions" Grid.Column="4"/>
 
         </Grid>
 
-        <Border CornerRadius="5" Background="DarkGray" Opacity="0.30" Grid.Row="2"/>
+        <Border Style="{StaticResource CustomSeparator}" Grid.Row="2"/>
 
-        <ItemsControl Grid.Row="3">
+        <ScrollViewer VerticalScrollBarVisibility="Visible" Grid.Row="3">
+            <ItemsControl ItemsSource="{Binding Items}">
 
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <UniformGrid Columns="5"/>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <VirtualizingStackPanel Orientation="Vertical"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
 
-            <ItemsControl.ItemTemplate>
-                <DataTemplate>
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Margin="10, 3">
 
-                </DataTemplate>
-            </ItemsControl.ItemTemplate>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                                <ColumnDefinition/>
+                            </Grid.ColumnDefinitions>
 
-        </ItemsControl>
+                            <TextBlock Style="{StaticResource CustomColumnTextBlock}" Text="{Binding FirstName}" Grid.Column="0"/>
+                            <TextBlock Style="{StaticResource CustomColumnTextBlock}" Text="{Binding LastName}" Grid.Column="1"/>
+                            <TextBlock Style="{StaticResource CustomColumnTextBlock}" Text="{Binding Parent.UserName}" Grid.Column="2"/>
+                            <TextBlock Style="{StaticResource CustomColumnTextBlock}" Text="{Binding Group.Title}" Grid.Column="3"/>
+
+                            <StackPanel Orientation="Horizontal" Grid.Column="4">
+
+                                <StackPanel.VerticalAlignment>Center</StackPanel.VerticalAlignment>
+                                <StackPanel.HorizontalAlignment>Center</StackPanel.HorizontalAlignment>
+
+                                <Button Margin="1" Style="{StaticResource BusinessButton}" Content="{materialDesign:PackIcon Kind=Plus}"/>
+                                <Button Margin="1" Style="{StaticResource BusinessButton}" Content="{materialDesign:PackIcon Kind=Minus}"/>
+
+                            </StackPanel>
+
+                        </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+
+            </ItemsControl>
+        </ScrollViewer>
 
     </Grid>
       

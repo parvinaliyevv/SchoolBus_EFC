@@ -3,25 +3,8 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         Title="SchoolBus" Height="600" Width="900" mc:Ignorable="d">
 
-    <Window.Resources>
-        <Style TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedLightButton}" x:Key="MenuButton">
-
-            <Setter Property="Background" Value="Transparent"/>
-            <Setter Property="Foreground" Value="Black"/>
-            
-            <Setter Property="BorderBrush" Value="{StaticResource BusinessColor}"/>
-            <Setter Property="BorderThickness" Value="1"/>
-            
-            <Setter Property="Margin" Value="5"/>
-            <Setter Property="Height" Value="35"/>
-            <Setter Property="materialDesign:ButtonAssist.CornerRadius" Value="15"/>
-
-        </Style>
-    </Window.Resources>
-    
     <Grid>
 
         <Grid.ColumnDefinitions>
@@ -42,7 +25,7 @@
 
                 <Button Style="{StaticResource MenuButton}" Content="Create Ride"/>
                 <Button Style="{StaticResource MenuButton}" Content="Rides"/>
-                <Button Style="{StaticResource MenuButton}" Content="Class"/>
+                <Button Style="{StaticResource MenuButton}" Command="{Binding DisplayGroupViewCommand}" Content="Class"/>
                 <Button Style="{StaticResource MenuButton}" Command="{Binding DisplayStudentViewCommand}" Content="Student"/>
                 <Button Style="{StaticResource MenuButton}" Command="{Binding DisplayParentViewCommand}" Content="Parent"/>
                 <Button Style="{StaticResource MenuButton}" Command="{Binding DisplayDriverViewCommand}" Content="Driver"/>

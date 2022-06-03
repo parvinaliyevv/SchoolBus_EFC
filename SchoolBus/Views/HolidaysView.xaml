@@ -3,6 +3,28 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
 
-    <Calendar materialDesign:CalendarAssist.HeaderBackground="{StaticResource BusinessColor}" materialDesign:CalendarAssist.SelectionColor="{StaticResource BusinessColor}" Background="Transparent" Margin="150, 30"/>
+    <Calendar x:Name="dubaimayanavella">
+
+        <Calendar.BlackoutDates>
+            <CalendarDateRange Start="9-2-2022" End="10-2-2022"/>
+        </Calendar.BlackoutDates>
+        
+        <Calendar.Background>
+            <SolidColorBrush Color="Transparent"/>
+        </Calendar.Background>
+
+        <Calendar.Margin>
+            <Thickness Left="150" Top="30" Right="150" Bottom="30"/>
+        </Calendar.Margin>
+        
+        <materialDesign:CalendarAssist.HeaderBackground>
+            <StaticResource ResourceKey="BusinessColor"/>
+        </materialDesign:CalendarAssist.HeaderBackground>
+
+        <materialDesign:CalendarAssist.SelectionColor>
+            <StaticResource ResourceKey="BusinessColor"/>
+        </materialDesign:CalendarAssist.SelectionColor>
+
+    </Calendar>
 
 </Page>

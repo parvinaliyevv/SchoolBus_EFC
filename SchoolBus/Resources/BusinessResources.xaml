@@ -1,6 +1,56 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
 
     <SolidColorBrush x:Key="BusinessColor" Color="#ffb61f"/>
+
+    <Style x:Key="MenuButton" TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedLightButton}">
+
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="Black"/>
+
+        <Setter Property="BorderBrush" Value="{StaticResource BusinessColor}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+
+        <Setter Property="Margin" Value="5"/>
+        <Setter Property="Height" Value="35"/>
+        <Setter Property="materialDesign:ButtonAssist.CornerRadius" Value="15"/>
+
+    </Style>
+
+    <Style x:Key="BusinessButton" TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedSecondaryDarkButton}">
+
+        <Setter Property="Background" Value="{StaticResource BusinessColor}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BusinessColor}"/>
+
+    </Style>
+
+    <Style x:Key="BusinessSearchBox" TargetType="TextBox" BasedOn="{StaticResource MaterialDesignFloatingHintTextBox}">
+
+        <Setter Property="materialDesign:TextFieldAssist.UnderlineBrush" Value="{StaticResource BusinessColor}"/>
+        <Setter Property="materialDesign:HintAssist.Hint" Value="Search"/>
+
+    </Style>
+
+    <Style x:Key="CustomSeparator" TargetType="Border">
+
+        <Setter Property="Background" Value="DarkGray"/>
+        <Setter Property="Opacity" Value="0.30"/>
+        <Setter Property="CornerRadius" Value="5"/>
+
+    </Style>
+
+    <Style x:Key="CustomHeaderTextBlock" TargetType="TextBlock">
+
+        <Setter Property="HorizontalAlignment" Value="Center"/>
+
+    </Style>
+    
+    <Style x:Key="CustomColumnTextBlock" TargetType="TextBlock">
+
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="TextAlignment" Value="Center"/>
+
+    </Style>
 
 </ResourceDictionary>
