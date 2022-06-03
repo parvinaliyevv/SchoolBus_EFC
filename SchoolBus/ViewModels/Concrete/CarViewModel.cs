@@ -13,4 +13,9 @@ public class CarViewModel: ListBaseViewModel<Car>
     {
         // Some logic code
     }
+
+    public override bool CheckItem()
+    {
+        return true;
+    }
 }

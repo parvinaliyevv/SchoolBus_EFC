@@ -4,7 +4,7 @@
 
     <SolidColorBrush x:Key="BusinessColor" Color="#ffb61f"/>
 
-    <Style x:Key="MenuButton" TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedLightButton}">
+    <Style x:Key="MenuButton" TargetType="Button" BasedOn="{StaticResource MaterialDesignFlatSecondaryButton}">
 
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Foreground" Value="Black"/>
@@ -14,7 +14,9 @@
 
         <Setter Property="Margin" Value="5"/>
         <Setter Property="Height" Value="35"/>
+        
         <Setter Property="materialDesign:ButtonAssist.CornerRadius" Value="15"/>
+        <Setter Property="materialDesign:RippleAssist.Feedback" Value="{StaticResource BusinessColor}"/>
 
     </Style>
 
@@ -25,10 +27,39 @@
 
     </Style>
 
+    <Style x:Key="OptionButton" TargetType="Button" BasedOn="{StaticResource MaterialDesignRaisedAccentButton}">
+
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Foreground" Value="Black"/>
+        <Setter Property="BorderBrush" Value="{StaticResource BusinessColor}"/>
+        <Setter Property="BorderThickness" Value="1.5"/>
+
+    </Style>
+
     <Style x:Key="BusinessSearchBox" TargetType="TextBox" BasedOn="{StaticResource MaterialDesignFloatingHintTextBox}">
 
         <Setter Property="materialDesign:TextFieldAssist.UnderlineBrush" Value="{StaticResource BusinessColor}"/>
         <Setter Property="materialDesign:HintAssist.Hint" Value="Search"/>
+
+    </Style>
+
+    <Style x:Key="SelectDataComboBox" TargetType="ComboBox" BasedOn="{StaticResource MaterialDesignComboBox}">
+
+        <Setter Property="materialDesign:TextFieldAssist.UnderlineBrush" Value="{StaticResource BusinessColor}"/>
+
+    </Style>
+
+    <Style x:Key="FillDataTextBox" TargetType="TextBox" BasedOn="{StaticResource MaterialDesignTextBoxBase}">
+
+        <Setter Property="materialDesign:TextFieldAssist.UnderlineBrush" Value="{StaticResource BusinessColor}"/>
+        <Setter Property="VerticalContentAlignment" Value="Bottom"/>
+
+    </Style>
+
+    <Style x:Key="FillDataPasswordBox" TargetType="PasswordBox" BasedOn="{StaticResource MaterialDesignPasswordBox}">
+
+        <Setter Property="materialDesign:TextFieldAssist.UnderlineBrush" Value="{StaticResource BusinessColor}"/>
+        <Setter Property="VerticalContentAlignment" Value="Bottom"/>
 
     </Style>
 

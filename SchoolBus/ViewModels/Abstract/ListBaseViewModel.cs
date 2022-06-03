@@ -23,4 +23,6 @@ public abstract class ListBaseViewModel<T> : ISearchViewModel, IAddViewModel<T>
 
 
     public abstract void InsertDatabase();
+
+    public abstract bool CheckItem();
 }

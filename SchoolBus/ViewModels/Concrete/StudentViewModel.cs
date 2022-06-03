@@ -13,4 +13,9 @@ public class StudentViewModel : ListBaseViewModel<Student>
     {
         // Some Logic Code
     }
+
+    public override bool CheckItem()
+    {
+        return true;
+    }
 }

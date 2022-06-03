@@ -13,4 +13,9 @@ public class ParentViewModel : ListBaseViewModel<Parent>
     {
         // Some logic code
     }
+
+    public override bool CheckItem()
+    {
+        return true;
+    }
 }

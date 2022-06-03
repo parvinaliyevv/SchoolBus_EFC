@@ -13,4 +13,9 @@ public class DriverViewModel : ListBaseViewModel<Driver>
     {
         // Some logic code
     }
+
+    public override bool CheckItem()
+    {
+        return true;
+    }
 }

@@ -3,74 +3,117 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
 
-    <Grid Margin="7">
+    <materialDesign:DialogHost DialogTheme="Light">
 
-        <Grid.RowDefinitions>
-            <RowDefinition MaxHeight="60"/>
-            <RowDefinition MaxHeight="30"/>
-            <RowDefinition MaxHeight="2"/>
-            <RowDefinition/>
-        </Grid.RowDefinitions>
+        <materialDesign:DialogHost.DialogContent>
 
-        <DockPanel LastChildFill="False" Grid.Row="0">
+            <Grid Height="200" Width="300" Margin="20, 10">
 
-            <Button Style="{StaticResource BusinessButton}" Content="{materialDesign:PackIcon Kind=Plus}"/>
+                <Grid.RowDefinitions>
+                    <RowDefinition MaxHeight="35"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
 
-            <TextBox Style="{StaticResource BusinessSearchBox}" Width="300" Margin="10" VerticalAlignment="Center"/>
+                <DockPanel LastChildFill="False">
+                    <Button DockPanel.Dock="Right" Style="{StaticResource OptionButton}" Command="{x:Static materialDesign:DialogHost.CloseDialogCommand}" Content="{materialDesign:PackIcon Kind=Close}"/>
+                </DockPanel>
 
-        </DockPanel>
+                <Grid Margin="10, 5, 10, 20" Grid.Row="1">
 
-        <Grid Margin="10, 0, 27, 0" Grid.Row="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition/>
+                        <RowDefinition Height="70"/>
+                    </Grid.RowDefinitions>
 
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
-            </Grid.ColumnDefinitions>
+                    <TextBlock Text="New Class" FontFamily="Arial Bold" FontSize="24"/>
 
-            <TextBlock Style="{StaticResource CustomHeaderTextBlock}" Text="Class" Grid.Column="0"/>
-            <TextBlock Style="{StaticResource CustomHeaderTextBlock}" Text="Actions" Grid.Column="1"/>
+                    <UniformGrid Rows="1" Grid.Row="1">
+
+                        <TextBox Style="{StaticResource FillDataTextBox}" Text="{Binding InsertItem.Title, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Class Name"/>
+
+                    </UniformGrid>
+
+                    <DockPanel LastChildFill="False" VerticalAlignment="Bottom" Grid.Row="2">
+                        <Button Style="{StaticResource BusinessButton}" Command="{Binding InsertCommand}" Content="Create" DockPanel.Dock="Right"/>
+                    </DockPanel>
+
+                </Grid>
+
+            </Grid>
+
+        </materialDesign:DialogHost.DialogContent>
+
+        <Grid Margin="7">
+
+            <Grid.RowDefinitions>
+                <RowDefinition MaxHeight="60"/>
+                <RowDefinition MaxHeight="30"/>
+                <RowDefinition MaxHeight="2"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <DockPanel LastChildFill="False" Grid.Row="0">
+
+                <Button Style="{StaticResource BusinessButton}" Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}" Content="{materialDesign:PackIcon Kind=Plus}"/>
+
+                <TextBox Style="{StaticResource BusinessSearchBox}" Width="300" Margin="10" VerticalAlignment="Center"/>
+
+            </DockPanel>
+
+            <Grid Margin="10, 0, 27, 0" Grid.Row="1">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Style="{StaticResource CustomHeaderTextBlock}" Text="Class" Grid.Column="0"/>
+                <TextBlock Style="{StaticResource CustomHeaderTextBlock}" Text="Actions" Grid.Column="1"/>
+
+            </Grid>
+
+            <Border Style="{StaticResource CustomSeparator}" Grid.Row="2"/>
+
+            <ScrollViewer VerticalScrollBarVisibility="Visible" Grid.Row="3">
+                <ItemsControl ItemsSource="{Binding Items}">
+
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel Orientation="Vertical"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Margin="10, 3">
+
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+
+                                <TextBlock Style="{StaticResource CustomColumnTextBlock}" Text="{Binding Title}" Grid.Column="0"/>
+
+                                <StackPanel Orientation="Horizontal" Grid.Column="1">
+
+                                    <StackPanel.VerticalAlignment>Center</StackPanel.VerticalAlignment>
+                                    <StackPanel.HorizontalAlignment>Center</StackPanel.HorizontalAlignment>
+
+                                    <Button Margin="1" Style="{StaticResource BusinessButton}" Content="{materialDesign:PackIcon Kind=Plus}"/>
+                                    <Button Margin="1" Style="{StaticResource BusinessButton}" Content="{materialDesign:PackIcon Kind=Minus}"/>
+
+                                </StackPanel>
+
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+
+                </ItemsControl>
+            </ScrollViewer>
 
         </Grid>
 
-        <Border Style="{StaticResource CustomSeparator}" Grid.Row="2"/>
-
-        <ScrollViewer VerticalScrollBarVisibility="Visible" Grid.Row="3">
-            <ItemsControl ItemsSource="{Binding Items}">
-
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <VirtualizingStackPanel Orientation="Vertical"/>
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <Grid Margin="10, 3">
-
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-
-                            <TextBlock Style="{StaticResource CustomColumnTextBlock}" Text="{Binding Title}" Grid.Column="0"/>
-
-                            <StackPanel Orientation="Horizontal" Grid.Column="1">
-
-                                <StackPanel.VerticalAlignment>Center</StackPanel.VerticalAlignment>
-                                <StackPanel.HorizontalAlignment>Center</StackPanel.HorizontalAlignment>
-
-                                <Button Margin="1" Style="{StaticResource BusinessButton}" Content="{materialDesign:PackIcon Kind=Plus}"/>
-                                <Button Margin="1" Style="{StaticResource BusinessButton}" Content="{materialDesign:PackIcon Kind=Minus}"/>
-
-                            </StackPanel>
-
-                        </Grid>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-
-            </ItemsControl>
-        </ScrollViewer>
-
-    </Grid>
+    </materialDesign:DialogHost>
     
 </Page>
