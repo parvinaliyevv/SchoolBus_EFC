@@ -9,11 +9,6 @@ public class GroupViewModel: ListBaseViewModel<Group>
     }
 
 
-    public override void InsertDatabase()
-    {
-        
-    }
-
     public override bool CheckItem()
     {
         if (string.IsNullOrWhiteSpace(InsertItem.Title)) return false;

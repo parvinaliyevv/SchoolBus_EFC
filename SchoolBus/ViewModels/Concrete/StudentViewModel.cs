@@ -9,11 +9,6 @@ public class StudentViewModel : ListBaseViewModel<Student>
     }
 
 
-    public override void InsertDatabase()
-    {
-        // Some Logic Code
-    }
-
     public override bool CheckItem()
     {
         return true;

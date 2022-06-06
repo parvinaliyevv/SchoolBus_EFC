@@ -9,13 +9,11 @@ public class CarViewModel: ListBaseViewModel<Car>
     }
 
 
-    public override void InsertDatabase()
-    {
-        // Some logic code
-    }
-
     public override bool CheckItem()
     {
+        if (string.IsNullOrWhiteSpace(InsertItem.Title) || string.IsNullOrWhiteSpace(InsertItem.Number) ||
+            string.IsNullOrWhiteSpace(InsertItem.SeatCount.ToString()) || InsertItem.SeatCount <= 0) return false;
+
         return true;
     }
 }

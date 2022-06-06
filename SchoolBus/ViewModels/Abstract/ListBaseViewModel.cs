@@ -16,13 +16,24 @@ public abstract class ListBaseViewModel<T> : ISearchViewModel, IAddViewModel<T>
     {
         _dbContext = DI_Container.Container.Resolve<SchoolBusDbContext>();
 
-        InsertCommand = new(sender => InsertDatabase());
+        InsertCommand = new(sender => InsertDatabase(), sender => CheckItem());
 
         SearchValue = string.Empty;
     }
 
-
-    public abstract void InsertDatabase();
-
+    
     public abstract bool CheckItem();
+
+    public virtual void InsertDatabase()
+    {
+        try
+        {
+            _dbContext.Add(InsertItem);
+            _dbContext.SaveChanges();
+        }
+        catch
+        {
+
+        }
+    }
 }

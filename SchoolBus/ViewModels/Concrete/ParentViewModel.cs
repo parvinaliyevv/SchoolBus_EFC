@@ -9,11 +9,6 @@ public class ParentViewModel : ListBaseViewModel<Parent>
     }
 
 
-    public override void InsertDatabase()
-    {
-        // Some logic code
-    }
-
     public override bool CheckItem()
     {
         return true;

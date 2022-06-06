@@ -30,14 +30,14 @@
 
                     <UniformGrid Rows="3" Grid.Row="1">
 
-                        <TextBox Style="{StaticResource FillDataTextBox}" materialDesign:HintAssist.Hint="Name"/>
-                        <TextBox Style="{StaticResource FillDataTextBox}" materialDesign:HintAssist.Hint="Number"/>
-                        <TextBox Style="{StaticResource FillDataTextBox}" materialDesign:HintAssist.Hint="Seat Count"/>
+                        <TextBox Style="{StaticResource FillDataTextBox}" Text="{Binding InsertItem.Title, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Name"/>
+                        <TextBox Style="{StaticResource FillDataTextBox}" Text="{Binding InsertItem.Number, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Number"/>
+                        <TextBox Style="{StaticResource FillDataTextBox}" Text="{Binding InsertItem.SeatCount, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Seat Count"/>
 
                     </UniformGrid>
 
                     <DockPanel LastChildFill="False" VerticalAlignment="Bottom" Grid.Row="2">
-                        <Button DockPanel.Dock="Right" Style="{StaticResource BusinessButton}" Content="Create"/>
+                        <Button Style="{StaticResource BusinessButton}" Command="{Binding InsertCommand}" Content="Create" DockPanel.Dock="Right"/>
                     </DockPanel>
 
                 </Grid>

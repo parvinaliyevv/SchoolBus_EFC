@@ -5,7 +5,11 @@ namespace SchoolBus.Commands;
 
 public class RelayCommand : ICommand
 {
-    public event EventHandler? CanExecuteChanged;
+    public event EventHandler? CanExecuteChanged
+    {
+        add { CommandManager.RequerySuggested += value; }
+        remove { CommandManager.RequerySuggested -= value; }
+    }
 
 
     private Predicate<object?> _canExecute;
