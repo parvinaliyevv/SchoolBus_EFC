@@ -8,7 +8,7 @@ public partial class Driver
         Rides = new HashSet<Ride>();
     }
 
-    public Car Car => Cars.ToList()[0];
+    public Car Car => Cars.ToArray()[0];
     public string Fullname => FirstName + " " + LastName;
 
     public int Id { get; set; }

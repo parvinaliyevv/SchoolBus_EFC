@@ -1,6 +1,7 @@
 ﻿<Page x:Class="SchoolBus.Views.GroupView"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
 
     <materialDesign:DialogHost DialogTheme="Light">
@@ -30,7 +31,7 @@
 
                     <UniformGrid Rows="1" Grid.Row="1">
 
-                        <TextBox Style="{StaticResource FillDataTextBox}" Text="{Binding InsertItem.Title, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Class Name"/>
+                        <TextBox Style="{StaticResource FillDataTextBox}" Text="{Binding InsertItem.Title, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Class Name"/>
 
                     </UniformGrid>
 
@@ -57,7 +58,20 @@
 
                 <Button Style="{StaticResource BusinessButton}" Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}" Content="{materialDesign:PackIcon Kind=Plus}"/>
 
-                <TextBox Style="{StaticResource BusinessSearchBox}" Width="300" Margin="10" VerticalAlignment="Center"/>
+                <TextBox Style="{StaticResource BusinessSearchBox}" Text="{Binding SearchValue, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}">
+
+                    <TextBox.VerticalAlignment>Center</TextBox.VerticalAlignment> 
+                    
+                    <TextBox.Width>300</TextBox.Width>
+                    <TextBox.Margin>10</TextBox.Margin>
+
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="TextChanged">
+                            <i:InvokeCommandAction Command="{Binding SearchCommand}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+
+                </TextBox>
 
             </DockPanel>
 

@@ -12,9 +12,9 @@ public partial class Student
     public string FirstName { get; set; } = null!;
     public string LastName { get; set; } = null!;
     public string Home { get; set; } = null!;
-    public string HomeDescription { get; set; } = null!;
+    public string HomeDescription { get; set; } = "None";
     public string OtherAddress { get; set; } = null!;
-    public string OtherAddressDescription { get; set; } = null!;
+    public string OtherAddressDescription { get; set; } = "None";
     public int ParentId { get; set; }
     public int GroupId { get; set; }
 

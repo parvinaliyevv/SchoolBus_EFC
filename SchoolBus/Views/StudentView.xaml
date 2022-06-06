@@ -1,6 +1,7 @@
 ﻿<Page x:Class="SchoolBus.Views.StudentView"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes">
 
     <materialDesign:DialogHost DialogTheme="Light">
@@ -30,19 +31,40 @@
 
                     <UniformGrid Rows="6" Grid.Row="1">
 
-                        <TextBox Style="{StaticResource FillDataTextBox}" materialDesign:HintAssist.Hint="Firstname"/>
-                        <TextBox Style="{StaticResource FillDataTextBox}" materialDesign:HintAssist.Hint="Lastname"/>
+                        <TextBox Style="{StaticResource FillDataTextBox}" Text="{Binding InsertItem.FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Firstname"/>
+                        <TextBox Style="{StaticResource FillDataTextBox}" Text="{Binding InsertItem.LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Lastname"/>
 
-                        <ComboBox Style="{StaticResource SelectDataComboBox}"/>
-                        <ComboBox Style="{StaticResource SelectDataComboBox}"/>
+                        <ComboBox Style="{StaticResource SelectDataComboBox}" ItemsSource="{Binding Parents}" SelectedItem="{Binding InsertItem.Parent, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
 
-                        <TextBox Style="{StaticResource FillDataTextBox}" materialDesign:HintAssist.Hint="Home address"/>
-                        <TextBox Style="{StaticResource FillDataTextBox}" materialDesign:HintAssist.Hint="Other address"/>
+                            <materialDesign:HintAssist.Hint>Parent</materialDesign:HintAssist.Hint>
+
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding UserName}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+
+                        </ComboBox>
+
+                        <ComboBox Style="{StaticResource SelectDataComboBox}" ItemsSource="{Binding Groups}" SelectedItem="{Binding InsertItem.Group, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+
+                            <materialDesign:HintAssist.Hint>Group</materialDesign:HintAssist.Hint>
+                            
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Title}"/>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                            
+                        </ComboBox>
+
+                        <TextBox Style="{StaticResource FillDataTextBox}" Text="{Binding InsertItem.Home, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Home address"/>
+                        <TextBox Style="{StaticResource FillDataTextBox}" Text="{Binding InsertItem.OtherAddress, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Other address"/>
 
                     </UniformGrid>
 
                     <DockPanel LastChildFill="False" VerticalAlignment="Bottom" Grid.Row="2">
-                        <Button DockPanel.Dock="Right" Style="{StaticResource BusinessButton}" Content="Create"/>
+                        <Button DockPanel.Dock="Right" Style="{StaticResource BusinessButton}" Command="{Binding InsertCommand}" Content="Create"/>
                     </DockPanel>
 
                 </Grid>
@@ -64,7 +86,20 @@
 
                 <Button Style="{StaticResource BusinessButton}" Command="{x:Static materialDesign:DialogHost.OpenDialogCommand}" Content="{materialDesign:PackIcon Kind=Plus}"/>
 
-                <TextBox Style="{StaticResource BusinessSearchBox}" Width="300" Margin="10" VerticalAlignment="Center"/>
+                <TextBox Style="{StaticResource BusinessSearchBox}" Text="{Binding SearchValue, Mode=OneWayToSource, UpdateSourceTrigger=PropertyChanged}">
+
+                    <TextBox.VerticalAlignment>Center</TextBox.VerticalAlignment>
+
+                    <TextBox.Width>300</TextBox.Width>
+                    <TextBox.Margin>10</TextBox.Margin>
+
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="TextChanged">
+                            <i:InvokeCommandAction Command="{Binding SearchCommand}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+
+                </TextBox>
 
             </DockPanel>
 

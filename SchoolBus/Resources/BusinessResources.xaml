@@ -36,7 +36,7 @@
 
     </Style>
 
-    <Style x:Key="BusinessSearchBox" TargetType="TextBox" BasedOn="{StaticResource MaterialDesignFloatingHintTextBox}">
+    <Style x:Key="BusinessSearchBox" TargetType="TextBox" BasedOn="{StaticResource MaterialDesignTextBoxBase}">
 
         <Setter Property="materialDesign:TextFieldAssist.UnderlineBrush" Value="{StaticResource BusinessColor}"/>
         <Setter Property="materialDesign:HintAssist.Hint" Value="Search"/>

@@ -2,5 +2,9 @@
 
 public interface ISearchViewModel
 {
-    public string SearchValue { get; set; }
+    RelayCommand SearchCommand { get; set; }
+
+    string SearchValue { get; set; }
+
+    void SearchItems();
 }

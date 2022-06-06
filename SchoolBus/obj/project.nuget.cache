@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "0WQrJwiweEvucsieWUzl0sVin0lwBRJX1ju5vaIO+VJLgke2PIZvOzfFmTzmHDt+sGvTDkSG63tEaxOGUKY2oQ==",
+  "dgSpecHash": "/zipRo6SI4XRSDDQTM8x2KEXpVEQRqzivMOCIKD+rpZDBiDTuM3l/j6az/Zk6FJqTFpfV3IiuEnC2yiAGlc/5A==",
   "success": true,
   "projectFilePath": "C:\\Users\\HP\\Desktop\\SchoolBus-WPF\\SchoolBus\\SchoolBus.csproj",
   "expectedPackageFiles": [
@@ -36,6 +36,7 @@
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\HP\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\system.collections.immutable\\6.0.0\\system.collections.immutable.6.0.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\system.configuration.configurationmanager\\4.7.0\\system.configuration.configurationmanager.4.7.0.nupkg.sha512",
     "C:\\Users\\HP\\.nuget\\packages\\system.diagnostics.diagnosticsource\\6.0.0\\system.diagnostics.diagnosticsource.6.0.0.nupkg.sha512",
