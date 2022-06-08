@@ -1,8 +1,9 @@
 ﻿namespace SchoolBus.ViewModels.Abstract;
 
-public abstract class ListBaseViewModel<T>: DependencyObject, ISearchViewModel, IAddViewModel<T>  where T : new() 
+public abstract class ListBaseViewModel<T>: DependencyObject, ISearchViewModel, IAddViewModel<T>, IDeleteViewModel  where T : class, new() 
 {
     protected readonly SchoolBusDbContext _dbContext;
+
 
     public ObservableCollection<T> Items
     {
@@ -11,6 +12,7 @@ public abstract class ListBaseViewModel<T>: DependencyObject, ISearchViewModel, 
     }
     public static readonly DependencyProperty ItemsProperty =
         DependencyProperty.Register("Items", typeof(ObservableCollection<T>), typeof(ListBaseViewModel<T>));
+
 
     public RelayCommand InsertCommand { get; set; }
     public T InsertItem
@@ -21,8 +23,12 @@ public abstract class ListBaseViewModel<T>: DependencyObject, ISearchViewModel, 
     public static readonly DependencyProperty InsertItemProperty =
         DependencyProperty.Register("InsertItem", typeof(T), typeof(ListBaseViewModel<T>));
 
+
     public RelayCommand SearchCommand { get; set; }
     public string SearchValue { get; set; }
+
+
+    public RelayCommand DeleteCommand { get; set; }
 
 
     public ListBaseViewModel()
@@ -34,6 +40,8 @@ public abstract class ListBaseViewModel<T>: DependencyObject, ISearchViewModel, 
 
         SearchCommand = new(sender => SearchItems());
         SearchValue = string.Empty;
+
+        DeleteCommand = new(DeleteItem);
     }
 
 
@@ -57,5 +65,22 @@ public abstract class ListBaseViewModel<T>: DependencyObject, ISearchViewModel, 
 
         InsertItem = new();
         MaterialDesignThemes.Wpf.DialogHost.CloseDialogCommand.Execute(null, null);
+    }
+
+    public virtual void DeleteItem(object sender)
+    {
+        var item = (sender as Button).DataContext as T;
+
+        try
+        {
+            _dbContext.Remove(item);
+            _dbContext.SaveChanges();
+
+            Items.Remove(item);
+        }
+        catch
+        {
+
+        }
     }
 }

@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-        Title="SchoolBus" MinHeight="600" MinWidth="900" mc:Ignorable="d">
+        Title="SchoolBus" MinHeight="600" MinWidth="900" mc:Ignorable="d" Loaded="Window_Loaded">
 
     <Grid>
 
@@ -12,16 +12,16 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
-        <Grid Margin="0, 50">
+        <Grid Margin="7">
 
             <Grid.RowDefinitions>
-                <RowDefinition Height="2*"/>
-                <RowDefinition Height="8*"/>
+                <RowDefinition Height="180"/>
+                <RowDefinition Height="4*" MaxHeight="800"/>
             </Grid.RowDefinitions>
 
-            <Image Margin="5"/>
+            <Image x:Name="LogoImage" Margin="5, 5, 5, 40" Grid.Row="0"/>
             
-            <StackPanel Grid.Row="1">
+            <UniformGrid Rows="8" Grid.Row="1">
 
                 <Button Style="{StaticResource MenuButton}" Content="Create Ride"/>
                 <Button Style="{StaticResource MenuButton}" Content="Rides"/>
@@ -32,7 +32,7 @@
                 <Button Style="{StaticResource MenuButton}" Command="{Binding DisplayCarViewCommand}" Content="Car"/>
                 <Button Style="{StaticResource MenuButton}" Command="{Binding DisplayHolidaysViewCommand}" Content="Holidays"/>
 
-            </StackPanel>
+            </UniformGrid>
             
         </Grid>
 

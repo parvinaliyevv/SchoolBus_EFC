@@ -96,13 +96,13 @@
             <Grid Margin="10, 0, 27, 0" Grid.Row="1">
 
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="1.5*"/>
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Style="{StaticResource CustomHeaderTextBlock}" Text="Firstname" Grid.Column="0"/>
@@ -131,13 +131,13 @@
                             <Grid Margin="10, 3">
 
                                 <Grid.ColumnDefinitions>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
-                                    <ColumnDefinition/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="2*"/>
+                                    <ColumnDefinition Width="1.5*"/>
                                 </Grid.ColumnDefinitions>
 
                                 <TextBlock Style="{StaticResource CustomColumnTextBlock}" Text="{Binding FirstName}" Grid.Column="0"/>
@@ -147,16 +147,12 @@
                                 <TextBlock Style="{StaticResource CustomColumnTextBlock}" Text="{Binding Car.Number}" Grid.Column="4"/>
                                 <TextBlock Style="{StaticResource CustomColumnTextBlock}" Text="{Binding License}" Grid.Column="5"/>
 
-                                <StackPanel Orientation="Horizontal" Grid.Column="6">
+                                <Button Style="{StaticResource BusinessButton}" Command="{Binding RelativeSource={RelativeSource AncestorType=Page, Mode=FindAncestor}, Path=DataContext.DeleteCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}}" Grid.Column="6">
 
-                                    <StackPanel.VerticalAlignment>Center</StackPanel.VerticalAlignment>
-                                    <StackPanel.HorizontalAlignment>Center</StackPanel.HorizontalAlignment>
+                                    <materialDesign:PackIcon Kind="Delete"/>
+                                    <Button.Width>70</Button.Width>
 
-                                    <Button Margin="1" Style="{StaticResource BusinessButton}" Content="{materialDesign:PackIcon Kind=Plus}"/>
-                                    <Button Margin="1" Style="{StaticResource BusinessButton}" Content="{materialDesign:PackIcon Kind=Minus}"/>
-
-                                </StackPanel>
-
+                                </Button>
                             </Grid>
                         </DataTemplate>
                     </ItemsControl.ItemTemplate>
