@@ -9,6 +9,7 @@ global using Microsoft.EntityFrameworkCore;
 global using SchoolBus.Assets;
 global using SchoolBus.Commands;
 global using SchoolBus.Data;
+global using SchoolBus.Localization;
 global using SchoolBus.Models;
 global using SchoolBus.Services;
 global using SchoolBus.ViewModels.Abstract;

@@ -11,25 +11,50 @@
             <ColumnDefinition Width="2.5*"/>
         </Grid.ColumnDefinitions>
 
-        <Grid Margin="10, 5, 10, 20" Grid.Row="1">
+        <StackPanel Grid.Column="0">
 
-            <Grid.RowDefinitions>
-                <RowDefinition Height="30"/>
-                <RowDefinition/>
-                <RowDefinition Height="70"/>
-            </Grid.RowDefinitions>
+            <TextBlock Text="Ride" FontFamily="Arial Bold" FontSize="24"/>
 
-            <TextBlock Text="New Student" FontFamily="Arial Bold" FontSize="24"/>
+            <UniformGrid Rows="6">
 
-            <UniformGrid Rows="6" Grid.Row="1">
+                <StackPanel Orientation="Horizontal">
 
-                <TextBox Style="{StaticResource FillDataTextBox}" Text="{Binding InsertItem.FirstName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Firstname"/>
-                <TextBox Style="{StaticResource FillDataTextBox}" Text="{Binding InsertItem.LastName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Lastname"/>
+                    <TextBlock Text="Fullname: " />
+                    <TextBlock Text="{Binding InsertItem.Fullname, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
 
+                </StackPanel>
 
-                <ComboBox Style="{StaticResource SelectDataComboBox}" ItemsSource="{Binding Groups}" SelectedItem="{Binding InsertItem.Group, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                <StackPanel Orientation="Horizontal">
 
-                    <materialDesign:HintAssist.Hint>Group</materialDesign:HintAssist.Hint>
+                    <TextBlock Text="Car Name: " />
+                    <TextBlock Text="{Binding InsertItem.Fullname, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+
+                    <TextBlock Text="Car Number: " />
+                    <TextBlock Text="{Binding InsertItem.Fullname, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+
+                    <TextBlock Text="Students Attend: " />
+                    <TextBlock Text="{Binding InsertItem.Fullname, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal">
+
+                    <TextBlock Text="Max Seats: " />
+                    <TextBlock Text="{Binding InsertItem.Fullname, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                </StackPanel>
+
+                <ComboBox Style="{StaticResource SelectDataComboBox}" ItemsSource="{Binding Drivers}" SelectedItem="{Binding InsertItem, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+
+                    <materialDesign:HintAssist.Hint>Driver</materialDesign:HintAssist.Hint>
 
                     <ComboBox.ItemTemplate>
                         <DataTemplate>
@@ -39,16 +64,13 @@
 
                 </ComboBox>
 
-                <TextBox Style="{StaticResource FillDataTextBox}" Text="{Binding InsertItem.Home, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Home address"/>
-                <TextBox Style="{StaticResource FillDataTextBox}" Text="{Binding InsertItem.OtherAddress, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" materialDesign:HintAssist.Hint="Other address"/>
-
             </UniformGrid>
 
-            <DockPanel LastChildFill="False" VerticalAlignment="Bottom" Grid.Row="2">
-                <Button DockPanel.Dock="Right" Style="{StaticResource BusinessButton}" Command="{Binding InsertCommand}" Content="Create"/>
+            <DockPanel LastChildFill="False" VerticalAlignment="Bottom" Margin="0, 7">
+                <Button Style="{StaticResource BusinessButton}" Command="{Binding InsertCommand}" Content="Create" DockPanel.Dock="Right"/>
             </DockPanel>
 
-        </Grid>
+        </StackPanel>
 
         <DockPanel Grid.Column="1">
 
@@ -98,8 +120,8 @@
 
                     <Border Style="{StaticResource CustomSeparator}" Grid.Row="1"/>
 
-                    <ScrollViewer VerticalScrollBarVisibility="Visible" Grid.Row="2">
-                        <ItemsControl ItemsSource="{Binding Items}" Background="DarkGray">
+                    <ScrollViewer VerticalScrollBarVisibility="Visible" Background="#fafafa" Grid.Row="2">
+                        <ItemsControl ItemsSource="{Binding Items}">
 
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
@@ -168,8 +190,8 @@
 
                     <Border Style="{StaticResource CustomSeparator}" Grid.Row="1"/>
 
-                    <ScrollViewer VerticalScrollBarVisibility="Visible" Grid.Row="2">
-                        <ItemsControl ItemsSource="{Binding Items}" Background="DarkGray">
+                    <ScrollViewer VerticalScrollBarVisibility="Visible" Background="#fafafa" Grid.Row="2">
+                        <ItemsControl ItemsSource="{Binding Items}" >
 
                             <ItemsControl.ItemsPanel>
                                 <ItemsPanelTemplate>
