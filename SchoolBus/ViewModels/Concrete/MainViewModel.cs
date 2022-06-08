@@ -11,6 +11,8 @@ public class MainViewModel : DependencyObject
         DependencyProperty.Register("SelectedPage", typeof(Page), typeof(MainViewModel));
 
 
+    public RelayCommand DisplayCreateRideCommand { get; set; }
+    public RelayCommand DisplayRidesCommand { get; set; }
     public RelayCommand DisplayGroupViewCommand { get; set; }
     public RelayCommand DisplayStudentViewCommand { get; set; }
     public RelayCommand DisplayParentViewCommand { get; set; }
@@ -23,6 +25,8 @@ public class MainViewModel : DependencyObject
     {
         SelectedPage = new StudentView();
 
+        DisplayCreateRideCommand = new RelayCommand(sender => SelectedPage = new CreateRide());
+        DisplayRidesCommand = new RelayCommand(sender => SelectedPage = new Rides());
         DisplayGroupViewCommand = new RelayCommand(sender => SelectedPage = new GroupView());
         DisplayStudentViewCommand = new RelayCommand(sender => SelectedPage = new StudentView());
         DisplayParentViewCommand = new RelayCommand(sender => SelectedPage = new ParentView());
