@@ -1,7 +1,4 @@
-﻿using System.Windows.Media;
-
-
-namespace SchoolBus.Services;
+﻿namespace SchoolBus.Services;
 
 public static class ImageService
 {

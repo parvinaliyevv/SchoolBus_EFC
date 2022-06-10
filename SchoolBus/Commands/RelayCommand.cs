@@ -1,7 +1,4 @@
-﻿using System.Windows.Input;
-
-
-namespace SchoolBus.Commands;
+﻿namespace SchoolBus.Commands;
 
 public class RelayCommand : ICommand
 {

@@ -1,7 +1,4 @@
-﻿using System.Configuration;
-
-
-namespace SchoolBus.Data;
+﻿namespace SchoolBus.Data;
 
 public partial class SchoolBusDbContext : DbContext
 {

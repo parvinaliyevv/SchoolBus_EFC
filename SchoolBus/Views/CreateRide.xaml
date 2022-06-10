@@ -11,7 +11,7 @@
             <ColumnDefinition Width="2.5*"/>
         </Grid.ColumnDefinitions>
 
-        <StackPanel Grid.Column="0">
+        <StackPanel Margin="10, 30, 30, 0" Grid.Column="0">
 
             <TextBlock Text="Ride" FontFamily="Arial Bold" FontSize="24"/>
 
