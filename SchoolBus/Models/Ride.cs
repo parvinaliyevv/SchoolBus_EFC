@@ -4,13 +4,17 @@ public partial class Ride
 {
     public Ride()
     {
-        RideStudents = new HashSet<RideStudent>();
+        RideStudents = new ObservableCollection<RideStudent>();
+
+        Driver = new() { FirstName = "www", LastName = ".amazon.com" };
     }
+
+    public int Attends => RideStudents.Count;
 
     public int Id { get; set; }
     public string Type { get; set; } = null!;
     public int DriverId { get; set; }
 
     public virtual Driver Driver { get; set; } = null!;
-    public virtual ICollection<RideStudent> RideStudents { get; set; }
+    public virtual ObservableCollection<RideStudent> RideStudents { get; set; }
 }

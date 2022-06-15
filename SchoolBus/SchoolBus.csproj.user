@@ -10,7 +10,7 @@
     <Compile Update="Views\CarView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\CreateRide.xaml.cs">
+    <Compile Update="Views\CreateRideView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\GroupView.xaml.cs">
@@ -28,7 +28,7 @@
     <Compile Update="Views\ParentView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Views\Rides.xaml.cs">
+    <Compile Update="Views\RidesView.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="Views\StudentView.xaml.cs">
@@ -42,7 +42,7 @@
     <Page Update="Views\CarView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\CreateRide.xaml">
+    <Page Update="Views\CreateRideView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\GroupView.xaml">
@@ -60,7 +60,7 @@
     <Page Update="Views\ParentView.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Views\Rides.xaml">
+    <Page Update="Views\RidesView.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\StudentView.xaml">

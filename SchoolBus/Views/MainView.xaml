@@ -23,8 +23,8 @@
             
             <UniformGrid Rows="8" Grid.Row="1">
 
-                <Button Style="{StaticResource MenuButton}" Command="{Binding DisplayCreateRideCommand}" Content="Create Ride"/>
-                <Button Style="{StaticResource MenuButton}" Command="{Binding DisplayRidesCommand}" Content="Rides"/>
+                <Button Style="{StaticResource MenuButton}" Command="{Binding DisplayCreateRideViewCommand}" Content="Create Ride"/>
+                <Button Style="{StaticResource MenuButton}" Command="{Binding DisplayRidesViewCommand}" Content="Rides"/>
                 <Button Style="{StaticResource MenuButton}" Command="{Binding DisplayGroupViewCommand}" Content="Class"/>
                 <Button Style="{StaticResource MenuButton}" Command="{Binding DisplayStudentViewCommand}" Content="Student"/>
                 <Button Style="{StaticResource MenuButton}" Command="{Binding DisplayParentViewCommand}" Content="Parent"/>
